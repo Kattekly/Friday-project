@@ -5,6 +5,7 @@ import React, {
 } from 'react'
 import s from './SuperSelect.module.css'
 
+
 export type ArrType = {
     id: number
     value: string | number
@@ -12,15 +13,14 @@ export type ArrType = {
 
 type DefaultSelectPropsType = DetailedHTMLProps<
     SelectHTMLAttributes<HTMLSelectElement>,
-    HTMLSelectElement
-    >
+    HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options?: ArrType[]
     onChangeOption?: (option: number) => void
 }
 
-const SuperSelect: React.FC<SuperSelectPropsType> = ({
+export const SuperSelect: React.FC<SuperSelectPropsType> = ({
                                                          options,
                                                          className,
                                                          onChange,

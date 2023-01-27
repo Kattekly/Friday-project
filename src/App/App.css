@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  --header_height: 60px;
+}
+
+body {
+  background-color: #F9F9FA;
 }
 
 .App-logo {
