@@ -1,0 +1,26 @@
+.select {
+    position: relative;
+    background: 95% url("./src/assets/chevron-down.svg") no-repeat;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 165px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    appearance: none;
+    outline: none;
+    padding-left: 10px;
+    color: darkgrey;
+}
+
+.select:focus {
+}
+
+.select option {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.option:hover {
+}
