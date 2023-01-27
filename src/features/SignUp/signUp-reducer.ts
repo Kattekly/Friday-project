@@ -1,7 +1,7 @@
 const initialState = {}
 type initialStateType = typeof initialState
 
-export const signUpReducer = (state: initialStateType = initialState, action: AppActionsType) => {
+export const signUpReducer = (state: initialStateType = initialState, action: AppActionsType): initialStateType => {
     switch (action.type) {
         case '': {
             return {

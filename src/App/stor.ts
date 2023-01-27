@@ -2,6 +2,7 @@ import {combineReducers, legacy_createStore} from "redux";
 import {appReducer} from "./app-reducer";
 import {loginReducer} from "../features/Login/login-reducer";
 import {signUpReducer} from "../features/SignUp/signUp-reducer";
+import {profileReducer} from "../features/Profile/profile-reducer";
 
 const rootReducer = combineReducers({
     app: appReducer,
