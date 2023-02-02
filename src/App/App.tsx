@@ -8,20 +8,22 @@ import RecoveryPassword from "../features/RecoveryPassword/RecoveryPassword";
 import NewPassword from "../features/NewPassword/NewPassword";
 import NotFound from "../features/NotFound/NotFound";
 import SuperComponents from "../features/SuperComponents/SuperComponents";
+import Header from "../features/Header/Header";
 
 function App() {
     return (
         <div className="App">
-            <Routes>
-                <Route path="/" element={<Navigate to="/profile"/>}/>
-                <Route path="/profile" element={<Profile/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/signUp" element={<SignUp/>}/>
-                <Route path="/recoveryPassword" element={<RecoveryPassword/>}/>
-                <Route path="/newPassword" element={<NewPassword/>}/>
-                <Route path="/404" element={<NotFound/>}/>
-                <Route path="/testComponents" element={<SuperComponents/>}/>
-            </Routes>
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/profile"/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/signUp" element={<SignUp/>}/>
+                    <Route path="/recoveryPassword" element={<RecoveryPassword/>}/>
+                    <Route path="/newPassword" element={<NewPassword/>}/>
+                    <Route path="/404" element={<NotFound/>}/>
+                    <Route path="/testComponents" element={<SuperComponents/>}/>
+                </Routes>
         </div>
     );
 }
