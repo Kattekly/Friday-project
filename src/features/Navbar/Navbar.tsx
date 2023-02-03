@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import s from "./Header.module.css"
+import s from "./Navbar.module.css"
 
-const Header = () => {
+const Navbar = () => {
     return (
         <nav className={s.nav}>
             <div>
@@ -32,4 +32,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

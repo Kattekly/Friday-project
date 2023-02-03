@@ -8,12 +8,12 @@ import RecoveryPassword from "../features/RecoveryPassword/RecoveryPassword";
 import NewPassword from "../features/NewPassword/NewPassword";
 import NotFound from "../features/NotFound/NotFound";
 import SuperComponents from "../features/SuperComponents/SuperComponents";
-import Header from "../features/Header/Header";
+import Navbar from "../features/Navbar/Navbar";
 
 function App() {
     return (
         <div className="App">
-            <Header/>
+            <Navbar/>
             <Routes>
                 <Route path="/" element={<Navigate to="/profile"/>}/>
                 <Route path="/profile" element={<Profile/>}/>
