@@ -1,13 +1,14 @@
 .nav {
-    text-align: left;
-    padding: 20px;
+  padding: 20px;
+
+  text-align: left;
 }
 
 .item a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .item a.active {
-    color: gold;
+  color: gold;
 }

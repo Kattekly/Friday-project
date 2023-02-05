@@ -1,11 +1,16 @@
-const initialState = {}
+const initialState = {
+  isLoggedIn: false
+}
 type initialStateType = typeof initialState
 
-export const loginReducer = (state: initialStateType = initialState, action: AppActionsType): initialStateType => {
+export const loginReducer = (
+    state: initialStateType = initialState,
+    action: AppActionsType
+): initialStateType => {
     switch (action.type) {
         case '': {
             return {
-                ...state
+                ...state,
             }
         }
         default: {
@@ -13,7 +18,5 @@ export const loginReducer = (state: initialStateType = initialState, action: App
         }
     }
 }
-
-
 
 export type AppActionsType = any

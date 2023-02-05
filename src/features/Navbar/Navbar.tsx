@@ -1,35 +1,37 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-import s from "./Navbar.module.css"
+import React from 'react'
+
+import { Link } from 'react-router-dom'
+
+import s from './Navbar.module.css'
 
 const Navbar = () => {
-    return (
-        <nav className={s.nav}>
-            <div>
-                <div>
-                    <Link to="/profile">Profile</Link>
-                </div>
-                <div>
-                    <Link to="/login">Login</Link>
-                </div>
-                <div>
-                    <Link to="/signUp">SignUp</Link>
-                </div>
-                <div>
-                    <Link to="/recoveryPassword">RecoveryPassword</Link>
-                </div>
-                <div>
-                    <Link to="/newPassword">NewPassword</Link>
-                </div>
-                <div>
-                    <Link to="/404">NotFound</Link>
-                </div>
-                <div>
-                    <Link to="/testComponents">SuperComponents</Link>
-                </div>
-            </div>
-        </nav>
-    );
-};
+  return (
+    <nav className={s.nav}>
+      <div>
+        <div>
+          <Link to="/profile">Profile</Link>
+        </div>
+        <div>
+          <Link to="/login">Login</Link>
+        </div>
+        <div>
+          <Link to="/signUp">SignUp</Link>
+        </div>
+        <div>
+          <Link to="/recoveryPassword">RecoveryPassword</Link>
+        </div>
+        <div>
+          <Link to="/newPassword">NewPassword</Link>
+        </div>
+        <div>
+          <Link to="/404">NotFound</Link>
+        </div>
+        <div>
+          <Link to="/testComponents">SuperComponents</Link>
+        </div>
+      </div>
+    </nav>
+  )
+}
 
-export default Navbar;
+export default Navbar
