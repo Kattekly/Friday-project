@@ -1,14 +1,13 @@
 import React from 'react'
 import {useFormik} from 'formik'
 import {useDispatch, useSelector} from 'react-redux'
-import Redirect from 'react-router-dom'
 import {AppRootStateType} from "../../App/stor";
 import {Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, TextField} from "@mui/material";
 
 export const Login = () => {
     const dispatch = useDispatch()
 
-    const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn);
+    const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.login.isLoggedIn);
 
     const formik = useFormik({
         validate: (values) => {
@@ -34,9 +33,9 @@ export const Login = () => {
         },
     })
 
-    if (isLoggedIn) {
-        return <Redirect to={"/"}/>
-    }
+   /* if (isLoggedIn) {
+        return <redirect to={"/profile"}/>
+    }*/
 
 
     return (
