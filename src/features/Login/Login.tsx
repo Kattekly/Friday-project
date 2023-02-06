@@ -6,7 +6,7 @@ import {Button, Checkbox, FormControl, FormControlLabel, FormGroup,TextField} fr
 
 
 
-export const SignIn = () => {
+export const Login = () => {
     const dispatch = useDispatch()
     const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.login.isLoggedIn);
 
