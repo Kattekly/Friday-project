@@ -2,11 +2,12 @@ import React from 'react'
 import {useFormik} from 'formik'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppRootStateType} from "../../App/stor";
-import {Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, TextField} from "@mui/material";
+import {Button, Checkbox, FormControl, FormControlLabel, FormGroup,TextField} from "@mui/material";
 
-export const Login = () => {
+
+
+export const SignIn = () => {
     const dispatch = useDispatch()
-
     const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.login.isLoggedIn);
 
     const formik = useFormik({
@@ -29,58 +30,43 @@ export const Login = () => {
             rememberMe: false
         },
         onSubmit: values => {
-            dispatch(loginTC(values));
+            /*dispatch(myLoginTC(values));*/
         },
     })
 
-   /* if (isLoggedIn) {
-        return <redirect to={"/profile"}/>
+    /*if (isLoggedIn) {
+        return <Redirect to={"/"} />
     }*/
 
 
-    return (
-        <div>
-            <form onSubmit={formik.handleSubmit}>
-                <FormControl>
-                    <FormLabel>
-                        <p>
-                            To log in get registered <a href={'https://social-network.samuraijs.com/'}
-                                                        target={'_blank'}>here</a>
-                        </p>
-                        <p>
-                            or use common test account credentials:
-                        </p>
-                        <p> Email: free@samuraijs.com
-                        </p>
-                        <p>
-                            Password: free
-                        </p>
-                    </FormLabel>
-                    <FormGroup>
-                        <TextField
-                            label="Email"
-                            margin="normal"
-                            {...formik.getFieldProps("email")}
-                        />
-                        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
-                        <TextField
-                            type="password"
-                            label="Password"
-                            margin="normal"
-                            {...formik.getFieldProps("password")}
-                        />
-                        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
-                        <FormControlLabel
-                            label={'Remember me'}
-                            control={<Checkbox
-                                {...formik.getFieldProps("rememberMe")}
-                                checked={formik.values.rememberMe}
-                            />}
-                        />
-                        <Button type={'submit'} variant={'contained'} color={'primary'}>Login</Button>
-                    </FormGroup>
-                </FormControl>
-            </form>
-        </div>
-    )
+    return <div>
+        <h3>Sign in</h3>
+        <form onSubmit={formik.handleSubmit}>
+            <FormControl>
+                <FormGroup>
+                    <TextField
+                        label="Email"
+                        margin="normal"
+                        {...formik.getFieldProps("email")}
+                    />
+                    {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                    <TextField
+                        type="password"
+                        label="Password"
+                        margin="normal"
+                        {...formik.getFieldProps("password")}
+                    />
+                    {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                    <FormControlLabel
+                        label={'Remember me'}
+                        control={<Checkbox
+                            {...formik.getFieldProps("rememberMe")}
+                            checked={formik.values.rememberMe}
+                        />}
+                    />
+                    <Button type={'submit'} variant={'contained'} color={'primary'}>Login</Button>
+                </FormGroup>
+            </FormControl>
+        </form>
+    </div>
 }
