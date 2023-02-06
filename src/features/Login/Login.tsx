@@ -1,6 +1,5 @@
-
-import { useFormik } from 'formik'
-import { Navigate, NavLink } from 'react-router-dom'
+import {useFormik} from 'formik'
+import {Navigate, NavLink} from 'react-router-dom'
 import SuperInputText from '../../common/SuperInputText/SuperInputText'
 
 import SuperButton from '../../common/SuperButton/SuperButton'
@@ -9,13 +8,14 @@ import s from './Login.module.css'
 import {useDispatch, useSelector} from 'react-redux'
 import SuperCheckbox from '../../common/SuperCheckbox/SuperCheckbox'
 import {AppRootStateType} from "../../App/stor";
+import {PasswordContainer} from "./PasswordContainer";
 
 type FormikErrorType = {
     email?: string
     password?: string
     rememberMe?: boolean
 }
- export const Login = () => {
+export const Login = () => {
     const dispatch = useDispatch()
     const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.login.isLoggedIn)
 
@@ -45,42 +45,47 @@ type FormikErrorType = {
         },
     })
     if (isLoggedIn) {
-        return <Navigate to={'/profile'} />
+        return <Navigate to={'/profile'}/>
     }
 
     return (
-        <div >
-            <h3>Sign in</h3>
-            <form onSubmit={formik.handleSubmit}>
+        <div className={s.signInContainer}>
+            <div className={s.page}>
+                <h3 className={s.h1}>Sign in</h3>
+                <form onSubmit={formik.handleSubmit}>
+                    <div className={s.field}>
+                        <label className={formik.touched.email && formik.errors.email ? s.errorField : ''}>
+                            Email
+                            <SuperInputText type={'text'} {...formik.getFieldProps('email')} />
+                            <div
+                                className={s.error}>{formik.touched.email && formik.errors.email && formik.errors.email}</div>
+                        </label>
+                    </div>
+                    <div className={s.field}>
+                        <label className={formik.touched.password && formik.errors.password ? s.errorField : ''}>
+                            Password
+                            <PasswordContainer {...formik.getFieldProps('password')} />
+                            <div
+                                className={s.error}>{formik.touched.password && formik.errors.password && formik.errors.password}</div>
+                        </label>
+                    </div>
+                    <div className={s.checkboxField}>
+                        <SuperCheckbox {...formik.getFieldProps('rememberMe')}>Remember me</SuperCheckbox>
+                    </div>
 
-                <label className={formik.touched.email && formik.errors.email ? s.errorField : ''}>
-                    Email
-                    <SuperInputText type={'text'} {...formik.getFieldProps('email')} />
-                    <div className={s.error}>{formik.touched.email && formik.errors.email && formik.errors.email}</div>
-                </label>
+                    <p className={s.passRecovery}>
+                        <NavLink to="/recoveryPassword">Forgot Password?</NavLink>
+                    </p>
+                    <div className={s.sendBtn}>
+                        <SuperButton xType={'default'} type="submit">
+                            Sign in
+                        </SuperButton>
+                    </div>
+                </form>
+                <p className={s.question}>Already have an account?</p>
+                <NavLink to="/signUp" className={s.link}>Sign Up</NavLink>
+            </div>
 
-                <label className={formik.touched.password && formik.errors.password ? s.errorField : ''}>
-                    Password
-                    {/*<input type="password" name="password" />*/}
-
-                    <div className={s.error}>{formik.touched.password && formik.errors.password && formik.errors.password}</div>
-                </label>
-
-                <div className={s.checkboxField}>
-                    <SuperCheckbox {...formik.getFieldProps('rememberMe')}>Remember me</SuperCheckbox>
-                </div>
-
-                <p>
-                    <NavLink to="/recoveryPassword">Forgot Password?</NavLink>
-                </p>
-                <div className={s.sendBtn}>
-                    <SuperButton xType={'default'} type="submit">
-                        Sign in
-                    </SuperButton>
-                </div>
-            </form>
-            <p>Already have an account?</p>
-            <NavLink to="/signUp">Sign Up</NavLink>
         </div>
     )
 }

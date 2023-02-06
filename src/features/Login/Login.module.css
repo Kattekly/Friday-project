@@ -1,15 +1,123 @@
+.signInContainer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 120px;
+
+}
+
+.page {
+    width: 413px;
+    padding: 35px 33px 42px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+    margin-bottom:40px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 32px;
+    color: #000000;
+    text-align: center;
+}
+
+.field {
+    width: 347px;
+    height: 48px;
+}
+
 .errorField  {
+    border-bottom: 1.5px solid #cc1439;
+}
+
+.error {
+    position: absolute;
+
+    font-size: 12px;
+    color: indianred;
+    text-align: end;
+}
+
+.checkboxField {
 
 }
 
-s.error {
+.sendBtn {
 
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-s.checkboxField {
+.question {
+    align-items: center;
 
+    height: 24px;
+    margin-bottom: 11px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #000000;
+
+    opacity: 0.5;
 }
 
-s.sendBtn {
+.link {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 24px;
+    color: #366EFF;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 50px;
+    margin-bottom: 31px;
+}
+
+/*--------------------*/
+
+
+.passRecovery {
+    align-self: flex-end;
+
+    font-weight: 500;
+    color: #000000;
+}
+
+.loginBlock {
+    display: block;
+    min-height: 100vh;
+    background-color: #F9F9FA;
+    box-sizing: border-box;
+    padding: 40px;
+    justify-content: center;
+
+
+}
+.formContainer{
+    height: 100%;
+    width: 40%;
+    background: #FFFFFF;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
